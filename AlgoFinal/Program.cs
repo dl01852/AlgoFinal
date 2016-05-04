@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MathNet.Numerics;
+using Epicycle.Math.LinearAlgebra;
+using Epicycle.Math.Geometry;
 
 
 namespace AlgoFinal
@@ -19,15 +22,17 @@ namespace AlgoFinal
         static void Main(string[] args)
         {
 
-            
 
+            
             ParseFile();
             Graph graph = new Graph(nSet.getAllNodes());
-            nSet.Describe();
-            eSet.Describe();
-           var matrix = graph.CreateAdjMatrix();
+            //nSet.Describe();
+            //eSet.Describe();
+            double[,] matrixDouble;
+           var matrix = graph.CreateAdjMatrix(out matrixDouble);
             Console.WriteLine("---------H Matrix-----------");
             graph.PrintMatrix(matrix);
+            graph.pageRank(matrixDouble,2);
             Console.WriteLine("---------Stochastic Matrix-----------");
             matrix = graph.CreateStochasticMatrix(matrix);
             graph.PrintMatrix(matrix);
