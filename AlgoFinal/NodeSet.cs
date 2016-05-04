@@ -56,7 +56,7 @@ namespace AlgoFinal
 
         public void Describe()
         {
-            Console.WriteLine("------Nodset Described------");
+            Console.WriteLine("------Node Set Described------");
             _nodes.ForEach(node => Console.WriteLine(node.ToString()));
         }
 

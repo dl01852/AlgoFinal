@@ -49,7 +49,7 @@ namespace AlgoFinal
 
         public void Describe()
         {
-            Console.WriteLine("------Edge Set------------");
+            Console.WriteLine("------Edge Set Described------------");
            _edges.ForEach(edge => Console.WriteLine(edge.ToString()));
         }
     }

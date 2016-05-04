@@ -5,7 +5,7 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
-using Epicycle.Math.Geometry;
+
 
 namespace AlgoFinal
 {
@@ -14,6 +14,7 @@ namespace AlgoFinal
         public Node root;
         public Node[] AllNodes;
         private string[] nodeNames;
+        Dictionary<int, bool> rowEmptiness = new Dictionary<int, bool>();
 
 
         public Graph(Node[] nset)
@@ -95,9 +96,25 @@ namespace AlgoFinal
             }
         }
 
+        public void PrintMatrix(double[,] matrix)
+        {
+            int length = (int) Math.Sqrt(matrix.Length);
+            for (int i = 0; i < length; i++)
+            {
+                for (int j = 0; j < length; j++)
+                {
+                    if(i == 0)
+                        Console.Write(matrix[i,j] + "      ");
+                    else
+                        Console.Write(matrix[i,j] + "  ");
+                }
+                Console.WriteLine("\r\n");
+            }
+        }
+
         public string[,] CreateStochasticMatrix(string[,] matrix)
         {
-            Dictionary<int, bool> rowEmptiness = new Dictionary<int, bool>();
+            
                 //dictionary to tell me which row is empty(All 0s) true = empty false = not empty.
             int length = (int) Math.Sqrt(matrix.Length);
 
@@ -130,6 +147,45 @@ namespace AlgoFinal
             return matrix;
         }
 
+        public double[,] CreateGMatrix(double[,] matrix)
+        {
+            var emptyRows = rowEmptiness.Where(p => p.Value).ToDictionary(p => p.Key, p => p.Value);
+            double[,] gMatrix = new double[matrix.GetLength(0),matrix.GetLength(1)];
+            for (int i = 0; i < gMatrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < gMatrix.GetLength(1)-1; j++)
+                {
+                    if (i == 0)
+                    {
+                        gMatrix[i, j+1] = matrix[i, j+1];
+                        continue;
+                    }
+                    if (j == 0 && !emptyRows.ContainsKey(i))
+                    {
+                       gMatrix[i, j] = matrix[i, j];
+                        double val = (matrix[i, j + 1]*0.9) + (0.1*(1.0/matrix.GetLength(0)));
+                        gMatrix[i, j + 1] = Math.Truncate(1000.0 * val) / 1000.0;
+                        continue;
+                    }
+                    if (j == 0 && emptyRows.ContainsKey(i))
+                    {
+                        gMatrix[i, j] = matrix[i, j];
+                        gMatrix[i, j + 1] = 1.0/(matrix.GetLength(0) - 1);
+                        continue;
+                    }
+                    if (emptyRows.ContainsKey(i))
+                        gMatrix[i, j + 1] = 1.0/(matrix.GetLength(0) - 1);
+                    else
+                    {
+                        double val = (matrix[i, j + 1]*0.9) + (0.1*(1.0/matrix.GetLength(0)));
+                        double truncated = Math.Truncate(1000.0 * val) / 1000.0;
+                        gMatrix[i, j + 1] = truncated;
+                    }
+                }
+            }
+
+            return gMatrix;
+        }
         public void pageRank(double[,] B, int iteration) // matrix multiplicationn.
         {
 

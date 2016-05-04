@@ -4,9 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MathNet.Numerics;
-using Epicycle.Math.LinearAlgebra;
-using Epicycle.Math.Geometry;
+
 
 
 namespace AlgoFinal
@@ -26,24 +24,28 @@ namespace AlgoFinal
             
             ParseFile();
             Graph graph = new Graph(nSet.getAllNodes());
-            //nSet.Describe();
-            //eSet.Describe();
+            nSet.Describe();
+            eSet.Describe();
             double[,] matrixDouble;
            var matrix = graph.CreateAdjMatrix(out matrixDouble);
             Console.WriteLine("---------H Matrix-----------");
             graph.PrintMatrix(matrix);
-            graph.pageRank(matrixDouble,2);
+            
             Console.WriteLine("---------Stochastic Matrix-----------");
             matrix = graph.CreateStochasticMatrix(matrix);
             graph.PrintMatrix(matrix);
-            
-            
+           var gmatrix = graph.CreateGMatrix(matrixDouble);
+            Console.WriteLine("---------G Matrix-----------");
+            graph.PrintMatrix(gmatrix);
+            graph.pageRank(matrixDouble, 2);
+
+
         }
 
 
         public static void ParseFile()
         {
-            var bleh = File.ReadAllLines("PageRank_04.txt");
+            var bleh = File.ReadAllLines("PageRank_03.txt");
             var parseNodes = bleh.Select(line => line.Split(new[] { "NodeName = " }, StringSplitOptions.None)).ToArray(); // grab the nodes
             var parseEdges = bleh.Select(line => line.Split(new[] { "EdgeName = " }, StringSplitOptions.None)).ToArray(); // grab the edges
 
