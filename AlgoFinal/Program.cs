@@ -16,14 +16,20 @@ namespace AlgoFinal
        static List<Edge> edges = new List<Edge>();
        static NodeSet nSet = new NodeSet(nodes);
        static EdgeSet eSet = new EdgeSet(edges);
+       static Dictionary<string,double> pageRank = new Dictionary<string, double>(); 
 
         static void Main(string[] args)
         {
 
-
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("CSCI 5330 Spring 2016");
+            sb.AppendLine("David Lewis");
+            sb.AppendLine("900732205");
+            sb.AppendLine("Graph 03");
             
             ParseFile();
             Graph graph = new Graph(nSet.getAllNodes());
+            Console.WriteLine(sb.ToString());
             nSet.Describe();
             eSet.Describe();
             double[,] matrixDouble;
@@ -37,15 +43,32 @@ namespace AlgoFinal
            var gmatrix = graph.CreateGMatrix(matrixDouble);
             Console.WriteLine("---------G Matrix-----------");
             graph.PrintMatrix(gmatrix);
-            graph.pageRank(matrixDouble, 2);
+           var rank = graph.pageRank(matrixDouble, 4);
 
+            for (int i = 0; i < rank.GetLength(0); i++)
+            {
+                
+                for (int j = 1; j < rank.GetLength(1); j++)
+                {
+                    pageRank.Add("N"+j,rank[i,j]);
+                    
+                }
+                
+            }
+            var order = pageRank.OrderByDescending(d => d.Value); // order the page rank.
+            Console.WriteLine("-----Page Rank after 4 Iterations---------");
+            foreach (KeyValuePair<string, double> keyValuePair in order)
+            {
+                Console.WriteLine("{0} - {1:0.000}",keyValuePair.Key,keyValuePair.Value);
+            }
 
+            Console.Read();
         }
 
 
         public static void ParseFile()
         {
-            var bleh = File.ReadAllLines("PageRank_03.txt");
+            var bleh = File.ReadAllLines("PageRank_04.txt");
             var parseNodes = bleh.Select(line => line.Split(new[] { "NodeName = " }, StringSplitOptions.None)).ToArray(); // grab the nodes
             var parseEdges = bleh.Select(line => line.Split(new[] { "EdgeName = " }, StringSplitOptions.None)).ToArray(); // grab the edges
 

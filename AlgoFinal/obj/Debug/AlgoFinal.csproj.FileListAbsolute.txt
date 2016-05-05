@@ -4,3 +4,33 @@ C:\Users\david-lewis\Desktop\Spring 2016\Algorithms\AlgoFinal\AlgoFinal\bin\Debu
 C:\Users\david-lewis\Desktop\Spring 2016\Algorithms\AlgoFinal\AlgoFinal\obj\Debug\AlgoFinal.csprojResolveAssemblyReference.cache
 C:\Users\david-lewis\Desktop\Spring 2016\Algorithms\AlgoFinal\AlgoFinal\obj\Debug\AlgoFinal.exe
 C:\Users\david-lewis\Desktop\Spring 2016\Algorithms\AlgoFinal\AlgoFinal\obj\Debug\AlgoFinal.pdb
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\AlgoFinal.exe.config
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\obj\Debug\AlgoFinal.exe
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\obj\Debug\AlgoFinal.pdb
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\AlgoFinal.exe
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\AlgoFinal.pdb
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\clipper_library.dll
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\Epicycle.Commons.TestUtils_cs.dll
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\Epicycle.Commons_cs.dll
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\Epicycle.Math.TestUtils_cs.dll
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\Epicycle.Math_cs.dll
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\MathNet.Numerics.dll
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\Moq.dll
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\nunit.framework.dll
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\System.Threading.dll
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\YamlDotNet.dll
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\Epicycle.Commons.TestUtils_cs.pdb
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\Epicycle.Commons.TestUtils_cs.xml
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\Epicycle.Commons_cs.pdb
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\Epicycle.Commons_cs.xml
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\Epicycle.Math.TestUtils_cs.pdb
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\Epicycle.Math.TestUtils_cs.xml
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\Epicycle.Math_cs.pdb
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\Epicycle.Math_cs.xml
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\MathNet.Numerics.xml
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\Moq.xml
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\nunit.framework.xml
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\System.Threading.xml
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\YamlDotNet.pdb
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\bin\Debug\YamlDotNet.xml
+C:\Users\David\Desktop\Spring 2016\Algorithms\New folder\AlgoFinal\obj\Debug\AlgoFinal.csprojResolveAssemblyReference.cache

@@ -164,7 +164,7 @@ namespace AlgoFinal
                     {
                        gMatrix[i, j] = matrix[i, j];
                         double val = (matrix[i, j + 1]*0.9) + (0.1*(1.0/matrix.GetLength(0)));
-                        gMatrix[i, j + 1] = Math.Truncate(1000.0 * val) / 1000.0;
+                        gMatrix[i, j + 1] = Math.Truncate(10000.0 * val) / 10000.0;
                         continue;
                     }
                     if (j == 0 && emptyRows.ContainsKey(i))
@@ -178,7 +178,7 @@ namespace AlgoFinal
                     else
                     {
                         double val = (matrix[i, j + 1]*0.9) + (0.1*(1.0/matrix.GetLength(0)));
-                        double truncated = Math.Truncate(1000.0 * val) / 1000.0;
+                        double truncated = Math.Truncate(10000.0 * val) / 10000.0;
                         gMatrix[i, j + 1] = truncated;
                     }
                 }
@@ -186,10 +186,10 @@ namespace AlgoFinal
 
             return gMatrix;
         }
-        public void pageRank(double[,] B, int iteration) // matrix multiplicationn.
+        public double[,] pageRank(double[,] B, int iteration) // matrix multiplicationn.
         {
 
-            double[,] A  = new double[1, B.GetLength(0) -1]; // A matrix will be 1 row with a length of the number of nodes. my example[1,10]
+            double[,] A  = new double[1, B.GetLength(0)]; // 'A' matrix will be 1 row with a length of the number of nodes. my example[1,10]
             
             // populating A matrix with an equal opportunity to hit each page soo 1/N (n being the number of Nodes)
             for (int i = 0; i < A.GetLength(0); i++) // GetLength(0) get's the row length
@@ -220,10 +220,10 @@ namespace AlgoFinal
                 {
                     for (int i = 0; i < rowA; i++) // iterating across matrix A
                     {
-                        for (int j = 0; j < columnB - 1; j++)
+                        for (int j = 0; j < columnB - 1; j++) // iterate down matrix B.
                         {
                             double temp = 0;
-                            for (int k = 0; k < columnA - 1; k++)
+                            for (int k = 0; k < columnA - 1; k++) // now multiply between the two.
                             {
                                 double aVal = A[i, k];
                                 double Bval = B[k + 1, j + 1];
@@ -233,25 +233,14 @@ namespace AlgoFinal
                             C[i, j+1] = temp;
                         }
                     }
-                    double[,] tempIterator = C;
-                    A = tempIterator;
+                    A = C;
+                    C = new double[rowA,columnB];
                     iteration--;
                 }
             }
+            return A;
         }
 
-        public void ConvertToDouble(string[,] matrix)
-        {
-            int length = (int) Math.Sqrt(matrix.Length);
-            double[,] dubMatrix = new double[length - 1, length - 1];
-
-            for (int i = 0; i < length; i++)
-            {
-                for (int j = 0; j < length; j++)
-                {
-                    dubMatrix[i, j] = Double.Parse(matrix[(i + 1), (j + 1)]);
-                }
-            }
-        }
+      
     }
 }
